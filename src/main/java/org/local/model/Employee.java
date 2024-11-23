@@ -1,16 +1,19 @@
 package org.local.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.math.BigInteger;
 @Data
 @Entity
 @Table(name = "employee")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id;
+    private long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -19,11 +22,11 @@ public class Employee {
     private String lastName;
 
     @Column(name = "gender")
-    private String gender;
+    private char gender;
 
     @Column(name = "age")
-    private String age;
+    private int age;
 
     @Column(name = "city_id")
-    private String cityId;
+    private int cityId;
 }
