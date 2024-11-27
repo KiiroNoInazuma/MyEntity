@@ -6,7 +6,6 @@ import org.hibernate.Transaction;
 import org.local.model.Employee;
 import org.local.util.HibernateSessionFactoryUtil;
 
-import java.math.BigInteger;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -27,7 +26,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee readById(BigInteger id) {
+    public Employee readById(Integer id) {
         Employee employee;
         try (Session session = sessionFactory.openSession()) {
             employee = session.get(Employee.class, id);

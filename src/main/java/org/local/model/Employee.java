@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "first_name")
@@ -29,4 +30,8 @@ public class Employee {
 
     @Column(name = "city_id")
     private int cityId;
+
+    @ManyToOne
+    @JoinColumn(name = "city_id", insertable = false, updatable = false)
+    private City city;
 }

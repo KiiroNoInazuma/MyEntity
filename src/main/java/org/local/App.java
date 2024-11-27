@@ -10,7 +10,8 @@ import org.local.model.Employee;
 public class App {
     public static void main(String[] args) {
         EmployeeDAO employeeDAO = new EmployeeDAOImpl();
-        Employee employee = new Employee(9, "Маруся", "Петровна", 'М', 25, 1);
+        Employee employee = employeeDAO.readById(2);
+        System.out.println(employee);
         employeeDAO.delete(employee);
     }
 }
